@@ -1,29 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
 import React, { Component } from 'react'
+import Overview from './components/Overview';
 
 class App extends Component {
   constructor() {
     super();
 
     this.state = {
-      task: []
+      task: { text: ''},
+      tasks: [],
     }
 
-    this.taskUp = this.taskUp.bind(this);
-  }
-
-  taskUp() {
-    this.setState({
-      task: this.state.task + 1
-    })
   }
 
   render() {
     return (
       <div>
-        <button onClick={this.taskUp}>Click Me!</button>
-        <p>{this.state.task}</p>
+        <form>
+          <label htmlFor="taskInput">Enter task</label>
+          <input type="text" id="taskInput" />
+          <button type="submit">Add Task</button>
+        </form>
       </div>
     )
   }
