@@ -11,6 +11,7 @@ class App extends Component {
       task: { 
         text: '',
         id: uniqid(),
+        index: 0,
       },
       tasks: [],
     }
@@ -22,6 +23,7 @@ class App extends Component {
       task: {
         text: e.target.value,
         id: this.state.task.id,
+        index: this.state.tasks.length + 1,
       }
     })
   }
